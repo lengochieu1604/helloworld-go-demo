@@ -1,4 +1,4 @@
-# A Simple Hello World Go Demo
+# A Simple Hello World Go Demo 
 
 Example used to demonstrate ```docker init``` CLI for a simple Hello World Go Program
 
