@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_lengochieu1604_helloworld_go_demo_1708399335063-push-trigger-input-set
+  identifier: Build_lengochieu1604_helloworld_go_demo_1708399335063pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_lengochieu1604_helloworld_go_demo_1708399335063
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
