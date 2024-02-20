@@ -17,13 +17,21 @@ pipeline:
           cloneCodebase: true
           execution:
             steps:
-              - step:
-                  identifier: gobuild
-                  name: go_build
-                  spec:
-                    command: go build
-                  timeout: ""
-                  type: Run
+              - parallel:
+                  - step:
+                      identifier: gobuild
+                      name: go_build
+                      spec:
+                        command: go build
+                      timeout: ""
+                      type: Run
+                  - step:
+                      type: Run
+                      name: Run_4
+                      identifier: Run_4
+                      spec:
+                        shell: Sh
+                        command: echo test
               - step:
                   identifier: gotestcoverage
                   name: go_test_coverage
@@ -39,9 +47,9 @@ pipeline:
                   timeout: ""
                   type: Run
           platform:
-            arch: Arm64
             os: MacOS
+            arch: Arm64
           runtime:
-            spec: {}
             type: Docker
+            spec: {}
         type: CI
